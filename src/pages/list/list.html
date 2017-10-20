@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-container">
+
+<div infiniteScroll [infiniteScrollDistance]="0"
+  [infiniteScrollThrottle]="300">
+  <div *ngFor=" let item of items; let i = index">
+      <ion-card >
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="'./assets/IMSIcon.svg'" />
+          </ion-avatar>
+          <h2>{{item.name}} - {{item.age}}</h2>
+          <p>Eye Color: <span [style.color]="item.eyeColor">{{item.eyeColor}}</span></p>
+        </ion-item>
+
+        <ion-item>
+          <span item-left>{{item.balance}}</span>
+          <span item-left>Activate</span>
+          <button ion-button icon-left clear item-end>
+            <ion-icon name="navigate"></ion-icon>
+            Start
+          </button>
+        </ion-item>
+      </ion-card>
+  </div>
+  </div>
+</ion-content>

@@ -1,0 +1,9 @@
+page-list {
+    .card-container{
+        background-color: #F2F2F2;
+    }
+
+    .card-md + ion-card{
+        margin-top:10px;
+    }
+}
